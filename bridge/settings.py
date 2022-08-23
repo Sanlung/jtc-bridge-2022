@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import django_heroku
-import os
 from pathlib import Path
 from decouple import config
 
@@ -27,12 +26,9 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ.get('DEBUG') == True:
-    DEBUG = True
-    ALLOWED_HOSTS = []
-elif os.environ.get('DEBUG') == False:
-    DEBUG = False
-    ALLOW_HOSTS = ['*']
+DEBUG = True
+
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -122,9 +118,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-# Enable WhiteNoise's GZip compression of static assets.
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
