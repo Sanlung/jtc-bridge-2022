@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import BridgeHomeView, BridgeCategoryView, BridgeThreadView, BridgeAuthenticateView, BridgeLogOutView
+from bridgeapp.views import BridgeHomeView, BridgeCategoryView, BridgeThreadView, BridgeAuthenticateView, BridgeLogOutView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.storage import staticfiles_storage
@@ -24,6 +24,6 @@ urlpatterns = [
     path('logout', login_required(BridgeLogOutView.as_view()), name='logout'),
 
     # serve favicon from '/static'
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favison.ico'))),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # add static assets

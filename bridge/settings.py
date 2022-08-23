@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 import django_heroku
+import dj_database_url
 import os
 from pathlib import Path
 from decouple import config
@@ -86,7 +87,7 @@ WSGI_APPLICATION = 'bridge.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# MAX_CONN_AGE = 600
+MAX_CONN_AGE = 600
 
 DATABASES = {
     'default': {
@@ -95,14 +96,14 @@ DATABASES = {
     }
 }
 
-# if 'DATABASE_URL' in os.environ:
-#     # Configure Django for DATABASE_URL environment variable
-#     DATABASES['default'] = dj_database_url.config(
-#         conn_max_age=MAX_CONN_AGE, ssl_require=True)
+if 'DATABASE_URL' in os.environ:
+    # Configure Django for DATABASE_URL environment variable
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=MAX_CONN_AGE, ssl_require=True)
 
-#     # Enable test database if found in CI environment
-#     if 'CI' in os.environ:
-#         DATABASES['default']['TEST'] = DATABASES['default']
+    # Enable test database if found in CI environment
+    if 'CI' in os.environ:
+        DATABASES['default']['TEST'] = DATABASES['default']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -136,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-# STATAIC_ROOT = BASE_DIR / 'staticfiles'
+STATAIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
 
 # Enable WhiteNoise's GZip compression of static assets.
