@@ -19,6 +19,6 @@ services:
 databases: # Render PostgreSQL database
     - name: postgresql-fitted-76149
       plan: free
-      databasename: jtc-bridgeapp
+      databaseName: jtc-bridgeapp
       user: sanlung
       ipAllowList: [] # only allow internal connections
