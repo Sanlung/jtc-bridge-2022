@@ -9,12 +9,14 @@ services:
       plan: free # optional; defaults to starter
       numInstances: 1
       envVars:
-          - key: DEBUG # Imported from Heroku app
-            value: False
           - key: DATABASE_URL # Render PostgreSQL database
             fromDatabase:
                 name: postgresql-fitted-76149
                 property: connectionString
+          - key: SECRET_KEY
+            generateValue: true
+          - key: WEB_CONCURRENCY
+            value: 4
 
 databases: # Render PostgreSQL database
     - name: postgresql-fitted-76149
