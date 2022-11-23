@@ -30,11 +30,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default="my_secret_key")
 
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.environ.get('RENDER_EXTERNAL_HOSTNAME')]
 
-RENDER_EXTERNAL_URL = os.environ.get('RENDER_EXTERNAL_URL')
-if RENDER_EXTERNAL_URL:
-    ALLOWED_HOSTS.append(RENDER_EXTERNAL_URL)
+# RENDER_EXTERNAL_URL = os.environ.get('RENDER_EXTERNAL_URL')
+# if RENDER_EXTERNAL_URL:
+#     ALLOWED_HOSTS.append(RENDER_EXTERNAL_URL)
 
 # Application definition
 
