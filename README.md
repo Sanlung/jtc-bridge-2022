@@ -12,7 +12,7 @@ The Bridge web app is a collaborative project undertaken by the Spring 2022 part
 
 The app is conceived as a forum in which community members may seek or offer information on topics intimate to the justice-impacted population. It seeks to connect those who are concerned about entering or exiting the corrections system with those who can offer information or insight specific to such conerns. Using the app's interactive message board anyone can ask a question, and anyone may offer an experiential response to the question, concerning any of the three broadly categorized areas of concern, namely, pre-commitment, in-custody, and post-release. In this way Bridge offers a wealth of information for persons and the families and friends of persons who come in the justice system.
 
-_The app is forked here for deployment to Heroku to further personal learning, and it's now deployed at https://jtc-bridgeapp.herokuapp.com/. The usage set forth below, therefore, is no longer appicable here as the app here has been modified per deployment requirements. Any interested persons should visit the [team project](https://github.com/ponyNYC/bridge_2022) for a clone of the app in development._
+_The app is forked here for deployment from Heroku to further personal learning, and it subsequently has been deployed from Render at https://jtc-bridgeapp.onrender.com/. The usage set forth below, therefore, is no longer appicable here as the app here has been modified per deployment requirements. Any interested persons should visit the [team project](https://github.com/ponyNYC/bridge_2022) for a clone of the app in development._
 
 ### Usage
 
